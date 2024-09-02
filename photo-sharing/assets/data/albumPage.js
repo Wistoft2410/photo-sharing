@@ -45,7 +45,7 @@ const albumPage = [
   {
     id: 2,
     title: 'Travel',
-    user: 'You',
+    user: 'John',
     background: image2,
     avatars: [
       {
