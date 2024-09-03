@@ -2,6 +2,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, ImageBackground, Pressable } from 'react-native'; // Corrected StyleSheet import
 import theme from '../../assets/themes'; 
+import Avatars from './Avatars';
 
 const Card = ({item}) => {
     return (
@@ -19,6 +20,7 @@ const Card = ({item}) => {
 
                     <View>
                         {/* Avatars go here */}
+                        <Avatars avatars={item.avatars}/>
                     </View>
                 </View>
             </Pressable>
