@@ -12,7 +12,7 @@ const Albums = ({ navigation }) => {
             <View style={styles.albumContainer}> 
                 {albumPage.map((item, index) => 
                 <View key={index}> 
-                    <Card item={item}/>
+                    <Card item={item} navigation={navigation}/>
                 
                 {/* Add seperator if the index is 1 */}
                 {index === 1 && <Seperator />}
