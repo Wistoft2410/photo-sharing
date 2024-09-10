@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useLayoutEffect, useRef} from 'react';
 import { View, Text, ScrollView, StyleSheet, Pressable } from 'react-native'; // Make sure StyleSheet is included
 import theme from '../../assets/themes/index';
 import albumPage from '../../assets/data/albumPage';
@@ -6,8 +6,11 @@ import Card from './Card';
 import Seperator from './Seperator';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Feather from '@expo/vector-icons/Feather'; 
+import BottomSheet from 'reanimated-bottom-sheet';
+import BottomSheetContent from './BottomSheetContent';
 
 const Albums = ({ navigation, navigation: { setOptions } }) => {
+    const sheetRef = useRef();
 
     useLayoutEffect(() => {
         setOptions({
@@ -20,6 +23,8 @@ const Albums = ({ navigation, navigation: { setOptions } }) => {
             )
         })
     })
+
+    const renderBottomSheetContent = () => <BottomSheetContent/> // Call this function and it renders this component 
 
     return (
         <>
@@ -36,6 +41,14 @@ const Albums = ({ navigation, navigation: { setOptions } }) => {
                 )}
             </View>
         </ScrollView>
+
+        <BottomSheet>
+            ref={sheetRef}
+            snapPoints={[250, 0]}
+            initialSnap={0}
+            borderRadius={10}
+            renderContent={renderBottomSheetContent}
+        </BottomSheet>
 
         </>
     );
