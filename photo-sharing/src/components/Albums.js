@@ -6,8 +6,8 @@ import Card from './Card';
 import Seperator from './Seperator';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Feather from '@expo/vector-icons/Feather'; 
-import BottomSheet from 'reanimated-bottom-sheet';
-import BottomSheetContent from './BottomSheetContent';
+// import BottomSheet from 'reanimated-bottom-sheet';
+// import BottomSheetContent from './BottomSheetContent';
 
 const Albums = ({ navigation, navigation: { setOptions } }) => {
     const sheetRef = useRef();
@@ -24,7 +24,7 @@ const Albums = ({ navigation, navigation: { setOptions } }) => {
         })
     })
 
-    const renderBottomSheetContent = () => <BottomSheetContent/> // Call this function and it renders this component 
+   //  const renderBottomSheetContent = () => <BottomSheetContent/> // Call this function and it renders this component 
 
     return (
         <>
@@ -41,7 +41,7 @@ const Albums = ({ navigation, navigation: { setOptions } }) => {
                 )}
             </View>
         </ScrollView>
-
+        {/* 
         <BottomSheet>
             ref={sheetRef}
             snapPoints={[250, 0]}
@@ -49,7 +49,7 @@ const Albums = ({ navigation, navigation: { setOptions } }) => {
             borderRadius={10}
             renderContent={renderBottomSheetContent}
         </BottomSheet>
-
+        */}
         </>
     );
 };
